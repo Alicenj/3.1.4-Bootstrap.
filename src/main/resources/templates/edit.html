@@ -22,7 +22,7 @@
   </div>
 </header>
 <body>
-<form th:method="PUT" th:action="@{/admin/edit/{id}(id=${user.getId()})}" th:object="${user}">
+<form th:method="POST" th:action="@{/admin/edit/{id}(id=${user.getId()})}" th:object="${user}">
   <label for="name">Введите имя</label>
   <input type="text" th:field="*{name}" id="name"/>
   <br/>

@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
     public User getUserById(Long id) {
         Optional<User> user = userRepository.findById(id);
 
-        return user.orElseThrow(()->new UsernameNotFoundException(String.format("User with %s not found", id)));
+        return user.orElseThrow(() -> new UsernameNotFoundException(String.format("User with %s not found", id)));
     }
 
     @Override
@@ -67,7 +67,6 @@ public class UserServiceImpl implements UserService {
     public void removeUser(Long id) {
         userRepository.deleteById(id);
     }
-
 
 
 }

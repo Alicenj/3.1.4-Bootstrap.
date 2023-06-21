@@ -104,7 +104,7 @@
 
                                         <!-- Форма редактирования Юзера -->
 
-                                        <form class="form w-50 mt-4 mb-4" th:method="PUT"
+                                        <form class="form w-50 mt-4 mb-4" th:method="PATCH"
                                               th:action="@{/admin/edit/{id}(id=${userThis.getId()})}"
                                               th:object="${users}" th:id="${'formEdit'+ userThis.getId()}">
                                             <div class="row mb-2">

@@ -34,7 +34,7 @@ public class AdminController {
     }
 
     @GetMapping("/new")
-    public String getUserCreateForm(@ModelAttribute("user") User user,Model model) {
+    public String getUserCreateForm(@ModelAttribute User user, Model model) {
 
         model.addAttribute("roles", roleService.getRoles());
         userService.getAllUsers();
@@ -43,8 +43,8 @@ public class AdminController {
     }
 
     @PostMapping("/new")
-    public String createUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()){
+    public String createUser(@ModelAttribute @Valid User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "new";
         }
 
@@ -53,7 +53,7 @@ public class AdminController {
     }
 
     @GetMapping("/edit/{id}")
-    public String getUserEditForm(@PathVariable("id") Long id, Model model) {
+    public String getUserEditForm(@PathVariable Long id, Model model) {
         User userById = userService.getUserById(id);
         model.addAttribute("user", userById);
         model.addAttribute("roles", roleService.getRoles());
@@ -66,10 +66,10 @@ public class AdminController {
         return "user";
     }
 
-    @PatchMapping("/edit/{id}")
-    public String updateUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult,
-                             @PathVariable("id") Long id) {
-        if (bindingResult.hasErrors()){
+    @PatchMapping ("/edit/{id}")
+    public String updateUser(@ModelAttribute @Valid User user, BindingResult bindingResult,
+                             @PathVariable Long id) {
+        if (bindingResult.hasErrors()) {
             return "edit";
         }
         userService.updateUser(id, user);
@@ -77,7 +77,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteUser(@PathVariable("id") Long id) {
+    public String deleteUser(@PathVariable Long id) {
         userService.removeUser(id);
         return "redirect:/admin";
     }
