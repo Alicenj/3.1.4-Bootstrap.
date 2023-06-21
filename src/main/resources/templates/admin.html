@@ -34,22 +34,24 @@
         </div>
     </div>
 </header>
-
 <body>
 <div class="container-fluid">
-    <div class="row align-items-center">
+    <div class="row">
         <div class="col-2">
-            <ul class="nav flex-column">
+            <ul class="nav flex-column nav-pills mt-3"> <!-- добавляем классы "mt-3" для отступа сверху и "nav-pills" для выбора кнопки -->
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
+                    <a class="nav-link active bg-primary text-white" aria-current="page" href="/admin">Admin</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/user}">User</a>
                 </li>
             </ul>
         </div>
-        <div class="col-10 bg-light">
-            <h1>Admin panel </h1>
+        <div class="col-10 mt-3 pl-4"> <!-- добавляем классы "mt-3" для отступа сверху и "pl-4" для отступа слева -->
+
+
+
+    <h1>Admin panel </h1>
 
             <ul class="nav nav-tabs">
                 <li class="nav-item">
