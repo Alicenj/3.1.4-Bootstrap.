@@ -15,7 +15,7 @@ public class Util {
     private final UserServiceImpl userService;
     private final RoleServiceImpl roleService;
 
-        @Autowired
+    @Autowired
     public Util(UserServiceImpl userService, RoleServiceImpl roleService) {
         this.userService = userService;
         this.roleService = roleService;
@@ -37,5 +37,5 @@ public class Util {
 
         userService.saveUser(admin);
         userService.saveUser(user); */
-   }
+    }
 }
